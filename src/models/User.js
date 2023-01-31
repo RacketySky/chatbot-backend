@@ -16,6 +16,10 @@ const UserSchema = new mongoose.Schema({
     Questions: {
         type: Array,
         required: true
+    },
+    type: {
+        type: String,
+        required: true
     }
 }, { timestamps: true })
 
