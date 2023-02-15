@@ -14,15 +14,12 @@ const QuestionSchema = new mongoose.Schema({
         required: true
     },
     period: {
-        type: Number,
+        type: String,
         required: true
     },
     solution: {
         type: String,
         required: true
-    },
-    explanation: {
-        type: String
     }
 }, { timestamps: true })
 
