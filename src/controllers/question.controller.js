@@ -121,19 +121,19 @@ const update = async (req, res) => {
 
 const returnOne = async (req, res) => {
     try {
-        const { type } = req.body;
+        const type = req.query.type;
 
         if (!type) {
-            res.status(404).send({ message: "You must be inform type of the question"})
+            res.status(404).send({ message: "You must be inform type of the question" })
         }
 
         const questions = await questionService.findByType(type);
         // console.log(questions.length);
-        const num = Math.floor(Math.random() * ((questions.length-1) - 0 + 1)) + 0;
-        
+        const num = Math.floor(Math.random() * ((questions.length - 1) - 0 + 1)) + 0;
+
         const question = questions[num]
 
-        res.status(200).send({question})
+        res.status(200).send({ question })
     } catch (err) {
         res.status(500).send({ message: err.message });
     }
