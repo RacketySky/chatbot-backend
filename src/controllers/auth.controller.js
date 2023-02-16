@@ -23,7 +23,7 @@ const login = async (req, res) => {
 
         res.status(200).send({
             user: user.name, 
-            tonek: token
+            token: token
         });
     } catch (err) {
         res.status(500).send({ message: err.message });
