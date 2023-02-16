@@ -1,5 +1,6 @@
 const express = require('express')
 const dotenv = require('dotenv')
+const cors = require('cors')
 const app = express()
 
 dotenv.config()
@@ -14,6 +15,8 @@ const questionRoute = require('./src/routes/question.route')
 
 connectDatabase();
 app.use(express.json());
+app.use(cors())
+
 app.get('/', (req, res) => {
     res.status(200).send('alive')
 })
